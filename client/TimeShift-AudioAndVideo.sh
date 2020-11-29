@@ -2,8 +2,8 @@
 
 set -euo  pipefail
 
-SCENE_NAME="$1"
-PORFILE_NAME="$2"
+SCENE_NAME="Desktop"
+PROFILE_NAME="TSYSShow-TS-VideoAndAudio"
 RECORD_LOCAL="no"
 
 
