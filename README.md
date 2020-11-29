@@ -13,14 +13,11 @@ Requires setting up OBS. Here is how TSYSShow has it's OBS setup:
 You need to setup any desired profiles in OBS one time, before using the scripts.
 TSYS Show has setup some common ones (audio only, video only, live, audio/video):
 
-![](client/obs-profiles.png)
+![](client/profiles.png)
 
 Profiles contain your stream target settings.
 
-![](client/obs-profile-settings.png)
-
-Use Stream Key for the show title name in the resulting recording file
-
+![](client/profile-settings.png)
 
 
 ### Scenes
