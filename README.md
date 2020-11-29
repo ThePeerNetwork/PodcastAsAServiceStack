@@ -35,4 +35,21 @@ See the server directory for ngnix configuration and scripts to process flv outp
 
 ### Nginx setup
 
+Please 
+
+1) apt-get install nginx libnginx-mod-rtmp
+
+2) modify nginx.conf with:
+
+include /etc/nginx/rtmp.conf;
+
+3) rename these files to something appropriate for your network/show name:
+rtmp-tshow-livebroadcast.conf  rtmp-tshowts.conf
+
+modify the endpoint names and update rtmp.conf to include the renamed files
+
+Restart nginx
+
 ### Post process setup
+
+TBD
