@@ -2,42 +2,26 @@
 
 set -euo  pipefail
 
-SCENE_NAME="StreamRemoteDesktop"
+SCENE_NAME="$1"
+PORFILE_NAME="$2"
 RECORD_LOCAL="no"
 
 
 #DONT ALTER ANYTHING UNDER THIS LINE
 
+#--scene <string>: Start with specific scene.
+#If you have obs setup with specific scenes, you can easily control mic/desktop/camera as desired and simply alter the SCENE_NAME variable at top as needed
+
+#--profile <string>: Use specific profile.
+#Setup profiles in OBS for whatever endpoints you need (and make sure to alter the Stream Key as that will be your episode filename in the recorded file)
+
+#Start obs with appropriate options as per variables at top of script....
 
 if [ $RECORD_LOCAL == "no" ] ; then
-obs --startstreaming --scene $SCENE_NAME
+obs --minimize-to-tray --startstreaming --scene $SCENE_NAME --profile $PROFILE_NAME
 fi
 
 if [ $RECORD_LOCAL == "yes" ] ; then
-obs --startstreaming --scene $SCENE_NAME
+obs --minimize-to-tray --startstreaming --startrecording --scene $SCENE_NAME --profile $PROFILE_NAME
 fi
 
-
-
---startstreaming: Automatically start streaming.
---startrecording: Automatically start recording.
---startreplaybuffer: Start replay buffer.
---startvirtualcam: Start virtual camera (if available).
-
---collection <string>: Use specific scene collection.
---profile <string>: Use specific profile.
---scene <string>: Start with specific scene.
-
---studio-mode: Enable studio mode.
---minimize-to-tray: Minimize to system tray.
---portable, -p: Use portable mode.
---multi, -m: Don't warn when launching multiple instances.
-
---verbose: Make log more verbose.
---always-on-top: Start in 'always on top' mode.
-
---unfiltered_log: Make log unfiltered.
-
---disable-updater: Disable built-in updater (Windows/Mac only)
-
---version, -V: Get current version.
